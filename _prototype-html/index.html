@@ -10,102 +10,245 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/modernizr.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.mixitup.js"></script>
+        <script src="js/functions.js"></script>
     </head>
     <body>
-    	<div class="grid-filter">
-			<ul class="grid-filter__list">
-				<li class="grid-filter__item">Tous</li>
-				<li class="grid-filter__item">De <strong>3,50</strong><br /> à <strong>6 &euro;</strong></li>
-				<li class="grid-filter__item">De <strong>6</strong><br /> à <strong>8,50 &euro;</strong></li>
-				<li class="grid-filter__item">De <strong>8,50</strong><br /> à <strong>10 &euro;</strong></li>
-				<li class="grid-filter__item">De <strong>10</strong><br /> à <strong>13 &euro;</strong></li>
-				<li class="grid-filter__item">De <strong>13</strong><br /> à <strong>15 &euro;</strong></li>
-				<li class="grid-filter__item">De <strong>15</strong><br /> à <strong>20 &euro;</strong></li>
+    	<div class="wrapper">
+    		<img src="images/headline.png" alt="" />
+    		<div class="block-title">
+	    		<h1>
+	    			Concours des foires aux vins 2014
+	    			<strong>Nos 50 bouchons d'or</strong>
+	    		</h1>
+	    		<p>
+					Après une implacable sélection notre jury vous propose ses 50 bouchons d'or, 50 bouteilles offrant le meilleur rapport qualité prix. Pour y arriver 1000 bouteilles ont été goûtées, plus de 130 jugées intéressantes ont fait l'objet d'une dégustation à l'aveugle et seules 50 ont été sélectionnées.
+	    		</p>
+	    	</div>
+	    	<div class="grid-filter controls">
+				<ul class="grid-filter__list">
+					<li class="grid-filter__item filter" data-filter="all">Tous</li>
+					<li class="grid-filter__item filter" data-filter=".price-1">De <strong>3,50</strong><br /> à <strong>6 &euro;</strong></li>
+					<li class="grid-filter__item filter" data-filter=".price-2">De <strong>6</strong><br /> à <strong>8,50 &euro;</strong></li>
+					<li class="grid-filter__item filter" data-filter=".price-3">De <strong>8,50</strong><br /> à <strong>10 &euro;</strong></li>
+					<li class="grid-filter__item filter" data-filter=".price-4">De <strong>10</strong><br /> à <strong>13 &euro;</strong></li>
+					<li class="grid-filter__item filter" data-filter=".price-5">De <strong>13</strong><br /> à <strong>15 &euro;</strong></li>
+					<li class="grid-filter__item filter" data-filter=".price-6">De <strong>15</strong><br /> à <strong>20 &euro;</strong></li>
+				</ul>
+	    	</div>
+			<ul class="grid cs-style-4" id="container">
+				<li class="mix price-1" data-myorder="1">
+					<figure>
+						<div><img src="images/touque.png" alt="img04"></div>
+						<figcaption>
+							<h2>Malicieux</h2>
+							<span>Le moins cher de notre sélection, ce vin démontre qu’il est possible de faire du bel ouvrage à ce niveau de prix. Jouant sur le cépage avec malice mais sans excès, il offre une belle vivacité et du fruité.</span>
+							<a href="http://dribbble.com/shots/1116775-Safari">Chez Lavinia</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Anjou rouge 2012,</strong>
+							Cuvée du Petit Clos; Nicolas Reau (Bio)
+						</div>
+					</div>
+				</li>
+				<li class="mix price-2" data-myorder="2">
+					<figure>
+						<div><img src="images/touque-2.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Côtes-de-bourg 2010</strong>
+							Château Falfas
+						</div>
+					</div>
+				</li>
+				<li class="mix price-1" data-myorder="3">
+					<figure>
+						<div><img src="images/touque-3.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Terras do Sado 2011 Pinot Noir</strong>
+							Quinta de Sant'Ana (Portugal)
+						</div>
+					</div>
+				</li>
+				<li class="mix price-1" data-myorder="4">
+					<figure>
+						<div><img src="images/touque.png" alt="img04"></div>
+						<figcaption>
+							<h2>Malicieux</h2>
+							<span>Le moins cher de notre sélection, ce vin démontre qu’il est possible de faire du bel ouvrage à ce niveau de prix. Jouant sur le cépage avec malice mais sans excès, il offre une belle vivacité et du fruité.</span>
+							<a href="http://dribbble.com/shots/1116775-Safari">Chez Lavinia</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Anjou rouge 2012,</strong>
+							Cuvée du Petit Clos; Nicolas Reau (Bio)
+						</div>
+					</div>
+				</li>
+				<li class="mix price-2" data-myorder="5">
+					<figure>
+						<div><img src="images/touque-2.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Côtes-de-bourg 2010</strong>
+							Château Falfas
+						</div>
+					</div>
+				</li>
+				<li class="mix price-3" data-myorder="6">
+					<figure>
+						<div><img src="images/touque.png" alt="img04"></div>
+						<figcaption>
+							<h2>Malicieux</h2>
+							<span>Le moins cher de notre sélection, ce vin démontre qu’il est possible de faire du bel ouvrage à ce niveau de prix. Jouant sur le cépage avec malice mais sans excès, il offre une belle vivacité et du fruité.</span>
+							<a href="http://dribbble.com/shots/1116775-Safari">Chez Lavinia</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Anjou rouge 2012,</strong>
+							Cuvée du Petit Clos; Nicolas Reau (Bio)
+						</div>
+					</div>
+				</li>
+				<li class="mix price-4" data-myorder="7">
+					<figure>
+						<div><img src="images/touque-2.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Côtes-de-bourg 2010</strong>
+							Château Falfas
+						</div>
+					</div>
+				</li>
+				<li class="mix price-5" data-myorder="8">
+					<figure>
+						<div><img src="images/touque-3.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Côtes-de-bourg 2010</strong>
+							Château Falfas
+						</div>
+					</div>
+				</li>
+				<li class="mix price-6" data-myorder="9">
+					<figure>
+						<div><img src="images/touque-2.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Côtes-de-bourg 2010</strong>
+							Château Falfas
+						</div>
+					</div>
+				</li>
+				<li class="mix price-4" data-myorder="10">
+					<figure>
+						<div><img src="images/touque-3.png" alt="img06"></div>
+						<figcaption>
+							<h2>Salin</h2>
+							<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
+							<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
+						</figcaption>
+					</figure>
+					<div class="item-body media">
+						<div class="alignright">
+							16,6
+							<br />
+							13,20 &euro;
+						</div>
+						<div class="media">
+							<strong>Côtes-de-bourg 2010</strong>
+							Château Falfas
+						</div>
+					</div>
+				</li>
 			</ul>
-    	</div>
-		<ul class="grid cs-style-4">
-			<li>
-				<figure>
-					<div><img src="images/touque.png" alt="img04"></div>
-					<figcaption>
-						<h2>Malicieux</h2>
-						<span>Le moins cher de notre sélection, ce vin démontre qu’il est possible de faire du bel ouvrage à ce niveau de prix. Jouant sur le cépage avec malice mais sans excès, il offre une belle vivacité et du fruité.</span>
-						<a href="http://dribbble.com/shots/1116775-Safari">Chez Lavinia</a>
-					</figcaption>
-				</figure>
-				<div class="item-body media">
-					<div class="alignright">
-						16,6
-						<br />
-						13,20 &euro;
-					</div>
-					<div class="media">
-						<strong>Muscadet-sèvre-et-maine sur lie 2013 (fût de chêne)</strong>
-						Manoir de la Grelière
-					</div>
-				</div>
-			</li>
-			<li>
-				<figure>
-					<div><img src="images/touque-2.png" alt="img06"></div>
-					<figcaption>
-						<h2>Salin</h2>
-						<span>D’une belle minéralité aux notes salines, la bouche est citronnée avec des pointes de fruits exotiques et beaucoup de fraîcheur. A savourer avec une assiette d’huîtres.</span>
-						<a href="http://dribbble.com/shots/1118904-Game-Center">Take a look</a>
-					</figcaption>
-				</figure>
-				<div class="item-body media">
-					<div class="alignright">
-						16,6
-						<br />
-						13,20 &euro;
-					</div>
-					<div class="media">
-						<strong>Muscadet-sèvre-et-maine sur lie 2013 (fût de chêne)</strong>
-						Manoir de la Grelière
-					</div>
-				</div>
-			</li>
-			<li>
-				<figure>
-					<div><img src="images/2.png" alt="img02"></div>
-					<figcaption>
-						<h2>Music</h2>
-						<span>Jacob Cummings</span>
-						<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
-					</figcaption>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<div><img src="images/3.png" alt="img03"></div>
-					<figcaption>
-						<h2>Settings</h2>
-						<span>Jacob Cummings</span>
-						<a href="http://dribbble.com/shots/1116685-Settings">Take a look</a>
-					</figcaption>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<div><img src="images/1.png" alt="img01"></div>
-					<figcaption>
-						<h2>Camera</h2>
-						<span>Jacob Cummings</span>
-						<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
-					</figcaption>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<div><img src="images/5.png" alt="img05"></div>
-					<figcaption>
-						<h2>Phone</h2>
-						<span>Jacob Cummings</span>
-						<a href="http://dribbble.com/shots/1117308-Phone">Take a look</a>
-					</figcaption>
-				</figure>
-			</li>
-		</ul>
+		</div><!-- .wrapper -->
     </body>
 </html>	
