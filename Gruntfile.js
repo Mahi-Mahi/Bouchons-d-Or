@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: '../web'
+    dist: 'dist'
   };
 
   // Project configuration.
@@ -97,12 +97,17 @@ module.exports = function(grunt) {
       }
     },
 
+    // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
-      all: [
-        'Gruntfile.js',
-      ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: {
+        src: [
+          'Gruntfile.js',
+          '<%= appConfig.app %>/scripts/{,*/}*.js'
+        ]
       }
     },
 
@@ -182,7 +187,131 @@ module.exports = function(grunt) {
       server: '.tmp'
     },
 
+    // Reads HTML for usemin blocks to enable smart builds that automatically
+    // concat, minify and revision files. Creates configurations in memory so
+    // additional tasks can operate on them
+    useminPrepare: {
+      html: '<%= appConfig.app %>/index.html',
+      options: {
+        dest: '<%= appConfig.dist %>',
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs'],
+              css: ['cssmin']
+            },
+            post: {}
+          }
+        }
+      }
+    },
+
+    // Performs rewrites based on filerev and the useminPrepare configuration
+    usemin: {
+      html: ['<%= appConfig.dist %>/{,*/}*.html'],
+      css: ['<%= appConfig.dist %>/styles/{,*/}*.css'],
+      options: {
+        assetsDirs: ['<%= appConfig.dist %>', '<%= appConfig.dist %>/images']
+      }
+    },
+
+    // Renames files for browser caching purposes
+    filerev: {
+      dist: {
+        src: [
+          '<%= appConfig.dist %>/scripts/{,*/}*.js',
+          '<%= appConfig.dist %>/styles/{,*/}*.css',
+          '<%= appConfig.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= appConfig.dist %>/styles/fonts/*'
+        ]
+      }
+    },
+
+    // Copies remaining files to places other tasks can use
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= appConfig.app %>',
+          dest: '<%= appConfig.dist %>',
+          src: [
+            '*.{ico,png,txt}',
+            '.htaccess',
+            '*.html'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/images',
+          dest: '<%= appConfig.dist %>/images',
+          src: ['generated/*']
+        }]
+      },
+      styles: {
+        expand: true,
+        cwd: '<%= appConfig.app %>/styles',
+        dest: '.tmp/styles/',
+        src: '{,*/}*.css'
+      }
+    },
+
+    uglify: {
+      options: {
+        mangle: false,
+        compress: {
+          drop_console: true
+        }
+      }
+    },
+
+    imagemin: {
+      dist: {
+        options: {
+          optimizationLevel: 1
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= appConfig.app %>/images',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: '<%= appConfig.dist %>/images'
+        }]
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          collapseWhitespace: true,
+          conservativeCollapse: true,
+          collapseBooleanAttributes: true,
+          removeCommentsFromCDATA: true,
+          removeOptionalTags: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= appConfig.dist %>',
+          src: ['*.html', 'views/{,*/}*.html'],
+          dest: '<%= appConfig.dist %>'
+        }]
+      }
+    },
+
   });
+
+  grunt.registerTask('build', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'copy:dist',
+    'cssmin',
+    'uglify',
+    'filerev',
+    'usemin',
+    'htmlmin'
+  ]);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
     if (target === 'dist') {

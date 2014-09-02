@@ -1,2 +1,6 @@
+.sass-cache/
+.tmp/
+node_modules/
+bower_components/
 
 bouchons-d-or-prototype-html.zip
