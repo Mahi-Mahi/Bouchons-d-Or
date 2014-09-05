@@ -4,6 +4,10 @@ body {
     font:normal 1em 'Raleway', Helvetica, sans-serif;
 }
 
+a {
+    outline: none;
+}
+
 .disable-hover, .disable-hover * {
     pointer-events: none !important;
 }
@@ -18,6 +22,22 @@ body {
     margin: 0 auto;
     padding:20px 0 0 0;
     width: 840px;
+}
+
+.block-headline {
+    background:url(../images/svg/header-bouchons-d-or.svg) left top no-repeat;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    height: 150px;
+    width: 832px;
+}
+
+.no-svg .block-headline {
+    background-image:url(../images/png/header-bouchons-d-or.png);  
 }
 
 .wrapper-bouchons-d-or h1 {
@@ -136,6 +156,10 @@ body {
 
 .grid .champagne figure > div {
     background:url(../images/svg/bg-champagne.svg) left top no-repeat;
+}
+
+.no-svg .grid .champagne figure > div {
+    background-image:url(../images/png/bg-champagne.png);   
 }
 
 .grid figure img {
@@ -329,6 +353,10 @@ body {
     vertical-align: top;
 }
 
+.no-svg .item-mark {
+    background-image:url(../images/png/icon-note.png)   
+}
+
 .item-price {
     background:url(../images/svg/icon-price.svg) left center no-repeat;
     color:#fe495a;
@@ -336,6 +364,10 @@ body {
     margin: 0;
     padding: 0 0 0 20px;
     vertical-align: top;
+}
+
+.no-svg .item-price {
+    background-image:url(../images/png/icon-price.png)   
 }
 
 .heart {
@@ -354,6 +386,9 @@ body {
     z-index:2;
 }
 
+.no-svg .heart {
+    background-image:url(../images/png/icon-heart.png)   
+}
 
 /* SELECTION */
 

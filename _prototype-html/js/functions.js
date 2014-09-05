@@ -17,7 +17,11 @@ var disableHoverOnScroll = function() {
 // FILTERS
 var filterSelection = function() {
 	if (jQuery('#container').length) {
-		jQuery('#container').mixItUp();
+		jQuery('#container').mixItUp({
+			load: {
+				sort: 'order:desc'
+			}
+		});
 	}
 };
 
