@@ -8,6 +8,11 @@ body {
     pointer-events: none !important;
 }
 
+.media {
+    overflow: hidden;
+    zoom:1;
+}
+
 .wrapper-bouchons-d-or {
     display: block;
     margin: 0 auto;
@@ -46,6 +51,14 @@ body {
     font-size: 17px;
     margin: 0;
     padding: 0;
+}
+
+.block-title--commitee p {
+    padding: 0 0 25px 0;
+}
+
+.block-title--commitee p:first-child {
+     padding: 25px 0;
 }
 
 .grid-filter__list {
@@ -339,4 +352,71 @@ body {
     text-transform: uppercase;
     width: 60px;
     z-index:2;
+}
+
+
+/* SELECTION */
+
+.commitee {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;    
+}
+
+.commitee__col {
+    display: table-cell;
+    margin: 0;
+    padding: 0 25px;
+    text-align: left;
+    vertical-align: top;
+    width: 49.9%;
+}
+
+.commitee__col:first-child {
+   border-right:1px solid #857788; 
+}
+
+.commitee-col__body {
+    padding:0 0 20px 0;
+    position:relative;
+    z-index:1;
+}
+
+.commitee-col__body:before {
+    border-top: 1px solid #857788;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    z-index:-1;
+}
+
+.commitee-col__body img {
+    border-radius:50%;
+    display: block;
+    float: left;
+    margin:0 15px 0 0;
+    padding: 0;
+}
+
+.commitee-col__body p {
+    display: block;
+    font-size: 15px;
+    margin: 0;
+    padding:0;
+}
+
+.commitee-col__body strong {
+    display: block;
+    font-weight: normal;
+    font-size: 17px;
+    margin: 0;
+    padding: 35px 0 20px 0;
 }
