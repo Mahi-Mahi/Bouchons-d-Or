@@ -160,12 +160,26 @@ module.exports = function(grunt) {
         cwd: '<%= appConfig.app %>'
       },
       app: {
+        exclude: ['bower_components/modernizr/modernizr.js'],
         src: ['<%= appConfig.app %>/index.html'],
         ignorePath: /..\//
       },
       sass: {
         src: ['<%= appConfig.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
+      }
+    },
+
+    modernizr: {
+      dist: {
+        devFile: 'bower_components/modernizr/modernizr.js',
+        outputFile: 'dist/scripts/modernizr.js',
+        files: {
+          src: [
+            'app/scripts/**/*.js',
+            'app/styles/**/*.scss',
+          ]
+        }
       }
     },
 
@@ -282,17 +296,33 @@ module.exports = function(grunt) {
       dist: {
         options: {
           collapseWhitespace: true,
-          conservativeCollapse: true,
+          conservativeCollapse: false,
           collapseBooleanAttributes: true,
           removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeOptionalTags: false
         },
         files: [{
           expand: true,
           cwd: '<%= appConfig.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html'],
           dest: '<%= appConfig.dist %>'
         }]
+      }
+    },
+
+    rsync: {
+      options: {
+        args: ["--verbose"],
+        exclude: [".git*", "*.scss", "node_modules", ".svn"],
+        recursive: true
+      },
+      staging: {
+        options: {
+          src: "./dist/",
+          dest: "/home/askmedia/weekly/bouchonsdor",
+          host: "root@vps.mahi-mahi.fr",
+          syncDestIgnoreExcl: true
+        }
       }
     },
 
@@ -310,7 +340,8 @@ module.exports = function(grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'rsync:staging'
   ]);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
