@@ -141,6 +141,10 @@ a {
     position: relative;
 }
 
+.oldie .grid li {
+    overflow: hidden;
+}
+
 .grid figure {
     margin: 0;
     position: relative;
@@ -265,12 +269,16 @@ a {
 }
 
 .no-touch .grid figure:hover img,
-.grid figure.cs-hover img {
+.grid figure.cs-hover img, .oldie .grid figure img {
     -webkit-transform: translateX(24%);
     -moz-transform: translateX(24%);
     -ms-transform: translateX(24%);
     transform: translateX(24%);
 }
+
+ .oldie .grid figure img {
+    margin:0 0 0 24%;
+ }
 
 .grid figcaption {
     height: 100%;
