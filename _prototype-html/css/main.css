@@ -8,6 +8,10 @@ a {
     outline: none;
 }
 
+img {
+    border:none;
+}
+
 .disable-hover, .disable-hover * {
     pointer-events: none !important;
 }
@@ -141,7 +145,7 @@ a {
     position: relative;
 }
 
-.oldie .grid li {
+.oldie .grid li, .touch .grid li {
     overflow: hidden;
 }
 
@@ -269,14 +273,14 @@ a {
 }
 
 .no-touch .grid figure:hover img,
-.grid figure.cs-hover img, .oldie .grid figure img {
+.grid figure.cs-hover img {
     -webkit-transform: translateX(24%);
     -moz-transform: translateX(24%);
     -ms-transform: translateX(24%);
     transform: translateX(24%);
 }
 
- .oldie .grid figure img {
+ .oldie .grid figure img, .touch .grid figure img {
     margin:0 0 0 24%;
  }
 
@@ -298,7 +302,7 @@ a {
     transition: transform 0.4s, opacity 0.1s 0.3s;
 }
 
-.no-touch .grid figure:hover figcaption,
+.no-touch .grid figure:hover figcaption, .touch .grid figure figcaption,
 .grid figure.cs-hover figcaption {
     opacity: 1;
     -webkit-transform: rotateY(0deg);
