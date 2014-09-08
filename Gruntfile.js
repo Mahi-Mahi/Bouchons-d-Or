@@ -157,7 +157,7 @@ module.exports = function(grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       options: {
-        cwd: '<%= appConfig.app %>'
+        cwd: ''
       },
       app: {
         exclude: ['bower_components/modernizr/modernizr.js'],
