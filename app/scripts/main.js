@@ -47,5 +47,5 @@ var launchJuryColorbox = function() {
 jQuery(document).ready(function() {
 	disableHoverOnScroll();
 	filterSelection();
-	launchJuryColorbox();
+	// launchJuryColorbox();
 });

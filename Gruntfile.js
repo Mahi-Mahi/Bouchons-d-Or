@@ -303,6 +303,17 @@ module.exports = function(grunt) {
       }
     },
 
+    processhtml: {
+      options: {
+        includeBase: 'app/'
+      },
+      dist: {
+        files: {
+          'dist/index.html': ['dist/index.html']
+        }
+      }
+    },
+
     htmlmin: {
       dist: {
         options: {
@@ -351,6 +362,7 @@ module.exports = function(grunt) {
     'uglify',
     'filerev',
     'usemin',
+    'processhtml',
     'htmlmin',
     'rsync:staging'
   ]);
