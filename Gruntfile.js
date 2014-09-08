@@ -150,7 +150,7 @@ module.exports = function(grunt) {
       dist: [
         'compass:dist',
         'imagemin',
-        // 'svgmin'
+        'svgmin'
       ]
     },
 
@@ -287,6 +287,17 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= appConfig.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: '<%= appConfig.dist %>/images'
+        }]
+      }
+    },
+
+    svgmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= appConfig.app %>/images',
+          src: '{,*/}*.svg',
           dest: '<%= appConfig.dist %>/images'
         }]
       }

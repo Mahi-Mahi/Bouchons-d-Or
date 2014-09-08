@@ -4,7 +4,9 @@
   "description": "Bouchons-d-Or =============",
   "main": "index.js",
   "dependencies": {
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "grunt-svgmin": "^1.0.0",
+    "svgmin": "^0.1.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
