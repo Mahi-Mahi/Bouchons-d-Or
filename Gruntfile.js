@@ -253,7 +253,8 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'pdf/*.pdf'
+            'pdf/*.pdf',
+            'facebook/*.png'
           ]
         }, {
           expand: true,
