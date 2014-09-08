@@ -27,25 +27,8 @@ var filterSelection = function() {
 	}
 };
 
-// COLORBOX
-var launchJuryColorbox = function() {
-	jQuery('.about').find('a').colorbox({
-		iframe: true,
-		width: '900px',
-		height: '680px',
-		innerWidth: '100%',
-		innerHeight: '100%',
-		initialWidth: '100%',
-		initialHeight: '100%',
-		maxWidth: '100%',
-		scrolling: true,
-		maxHeight: '100%'
-	});
-};
-
 // DOCUMENT READY
 jQuery(document).ready(function() {
 	disableHoverOnScroll();
 	filterSelection();
-	// launchJuryColorbox();
 });

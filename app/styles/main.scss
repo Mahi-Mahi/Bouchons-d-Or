@@ -470,4 +470,10 @@ img {
     padding: 35px 0 20px 0;
 }
 
-@import 'colorbox';
+.dld-pdf {
+    display: block;
+    a {
+        display: block;
+        text-align: right;
+    }
+}
