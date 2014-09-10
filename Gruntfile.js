@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       },
       compass: {
         files: ['<%= appConfig.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['compass:server' /*, 'autoprefixer'*/ ]
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -357,7 +357,7 @@ module.exports = function(grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer',
+    // 'autoprefixer',
     'concat',
     'copy:dist',
     'cssmin',
@@ -378,7 +378,7 @@ module.exports = function(grunt) {
       'clean',
       'wiredep',
       'concurrent:server',
-      'autoprefixer',
+      // 'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
